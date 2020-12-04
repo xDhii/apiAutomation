@@ -8,4 +8,4 @@ Funcionalidade: Utilizar a lojinha através da API
   Cenário: Cadastro de Usuário
     Dado o endereço da API da lojinha
     Quando eu realizar uma requisição para criar um Usuário
-    Então a API deverá retornar os dados do cadastro respondendo o código 200
+    Então a API deverá retornar os dados do cadastro respondendo o código 201
