@@ -59,6 +59,7 @@ Available tags:
 @get
 @post
 @startup
+@lojinha
 
 Ps: @startup scenario may fail due to a cron job on the server that limits the API to store maximum 400 . To avoid it, run the @cleanStartup and wait few minutes until the endpoint is clean
 
