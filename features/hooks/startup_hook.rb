@@ -5,7 +5,7 @@ Before '@startup' do
     "nome": @nome + " Valumin",
     "cidade": @cidade
   }
-  # @body = JSON.generate(body)
+
   @startup = Startup.new(@body)
 end
 
