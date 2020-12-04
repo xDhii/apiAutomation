@@ -35,5 +35,4 @@ Então('a API deverá retornar os dados do produto e responder o código {int}')
   puts $produto
   puts "Status: #{$produto.code}"
   expect($produto.code).to eq int
-  puts x['data']['produtoid']
 end

@@ -19,3 +19,8 @@ Funcionalidade: Utilizar a lojinha através da API
     Dado o endereço da API da lojinha
     Quando eu realizar uma requisição para cadastrar um produto
     Então a API deverá retornar os dados do produto e responder o código 201
+
+    Cenário: Busca de Produto
+    Dado o endereço da API da lojinha
+    Quando eu realizar uma requisição para buscar o produto 9767
+    Então a API deverá retornar os dados do produto e responder o código 200
