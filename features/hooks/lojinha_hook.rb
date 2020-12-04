@@ -8,5 +8,10 @@ Before '@lojinha' do
     "usuariosenha": @usuariosenha
   }
 
-  @lojinha = Lojinha.new(@createUser)
+  @loginUser = {
+    "usuariologin": @usuariologin,
+    "usuariosenha": @usuariosenha
+  }
+
+  @lojinha = Lojinha.new(@createUser, @loginUser)
 end
