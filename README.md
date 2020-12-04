@@ -1,4 +1,4 @@
-# WebJump Automation Project
+# WebJump API Automation Project
 
 To develop it, I've used these tools:
 
