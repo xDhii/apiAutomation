@@ -15,5 +15,4 @@ class Lojinha
   def logar_usuario
     self.class.post('/login', @userLogin)
   end
-
 end

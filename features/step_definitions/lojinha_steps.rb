@@ -17,9 +17,10 @@ Então("a API deverá retornar os dados do cadastro respondendo o código {int}"
 end
 
 Quando("eu realizar uma requisição para logar com o usuário criado") do
-  pending # Write code here that turns the phrase above into concrete actions
+  $login = @lojinha.logar_usuario
 end
 
 Então("a API deverá retornar os dados de token e responder o código {int}") do |int|
-  pending # Write code here that turns the phrase above into concrete actions
+  puts $login
+  puts $login.code
 end
