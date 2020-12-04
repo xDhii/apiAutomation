@@ -1,12 +1,12 @@
-Dado("o endereço da API da lojinha") do
+Dado('o endereço da API da lojinha') do
   # Já instanciado pela classe Lojinha
 end
 
-Quando("eu realizar uma requisição para criar um Usuário") do
+Quando('eu realizar uma requisição para criar um Usuário') do
   $response = @lojinha.criar_usuario
 end
 
-Então("a API deverá retornar os dados do cadastro respondendo o código {int}") do |response_code|
+Então('a API deverá retornar os dados do cadastro respondendo o código {int}') do |response_code|
   expect($response.code).to eq response_code
   expect($response.message).to eq("Created")
 
@@ -16,11 +16,11 @@ Então("a API deverá retornar os dados do cadastro respondendo o código {int}"
   puts "Message     : #{$response['message']}"
 end
 
-Quando("eu realizar uma requisição para logar com o usuário criado") do
+Quando('eu realizar uma requisição para logar com o usuário criado') do
   $login = @lojinha.logar_usuario
 end
 
-Então("a API deverá retornar os dados de token e responder o código {int}") do |int|
+Então('a API deverá retornar os dados de token e responder o código {int}') do |int|
   expect($login.code).to eq int
   expect($login.message).to eq('OK')
   $token = $login['data']['token']
@@ -31,14 +31,9 @@ Quando("eu realizar uma requisição para cadastrar um produto") do
   $produto = @lojinha.cadastrar_produto
 end
 
-Então("a API deverá retornar os dados do produto e responder o código {int}") do |int|
+Então('a API deverá retornar os dados do produto e responder o código {int}') do |int|
   puts $produto
-  x = $produto.to_json
-  puts $produto.code
+  puts "Status: #{$produto.code}"
   expect($produto.code).to eq int
-
-  # binding.pry
   puts x['data']['produtoid']
-  # puts $produto['data']
-  # puts $produto.message
 end
