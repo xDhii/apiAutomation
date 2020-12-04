@@ -6,6 +6,7 @@ class Lojinha
   def initialize(create_user, user_login, create_product)
     @create_user = { body: create_user }
     @user_login = { body: user_login }
+    @header = {headers: {"token": $token}}
     @create_product = {
       headers: {"token": $token},
       body: create_product}
@@ -21,5 +22,9 @@ class Lojinha
 
   def cadastrar_produto
     self.class.post('/produto', @create_product)
+  end
+
+  def busca_produto(id)
+    self.class.get("/produto/#{id}", @header)
   end
 end
