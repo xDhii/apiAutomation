@@ -15,3 +15,11 @@ Então("a API deverá retornar os dados do cadastro respondendo o código {int}"
   puts "User Name   : #{$response['data']['usuarionome']}"
   puts "Message     : #{$response['message']}"
 end
+
+Quando("eu realizar uma requisição para logar com o usuário criado") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Então("a API deverá retornar os dados de token e responder o código {int}") do |int|
+  pending # Write code here that turns the phrase above into concrete actions
+end
