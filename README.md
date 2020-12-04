@@ -2,10 +2,11 @@
 
 To develop it, I've used these tools:
 
-- Windows 10
+- Ubuntu 20.04
 - Ruby 2.6
-- Cucumber 3.1.2
-- Bundler 2.1.4
+- Cucumber
+- Bundler
+- Faker
 
 This project has the goal of automate webjump test API plataform with structure Ruby, also has
 implementation of the design pattern page objects.
@@ -17,7 +18,7 @@ The project uses BDD to write test scenarios and it's structure was constructed 
 You'll need to install the following:
 
 - Ruby (Recommended version 2.6)
-- Bundler gem (Recommended version 2.1.4)
+- Bundler gem (Recommended latest version)
 
 ## Installation
 

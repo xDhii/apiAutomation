@@ -15,3 +15,15 @@ Então("a API deverá retornar os dados do cadastro respondendo o código {int}"
   puts "User Name   : #{$response['data']['usuarionome']}"
   puts "Message     : #{$response['message']}"
 end
+
+Quando("eu realizar uma requisição para logar com o usuário criado") do
+  $login = @lojinha.logar_usuario
+end
+
+Então("a API deverá retornar os dados de token e responder o código {int}") do |int|
+  expect($login.code).to eq int
+  expect($login.message).to eq('OK')
+  $token = $login['data']['token']
+  puts "Token       : #{$token}"
+
+end

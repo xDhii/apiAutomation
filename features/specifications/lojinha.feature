@@ -9,3 +9,8 @@ Funcionalidade: Utilizar a lojinha através da API
     Dado o endereço da API da lojinha
     Quando eu realizar uma requisição para criar um Usuário
     Então a API deverá retornar os dados do cadastro respondendo o código 201
+
+  Cenário: Login de Usuário
+    Dado o endereço da API da lojinha
+    Quando eu realizar uma requisição para logar com o usuário criado
+    Então a API deverá retornar os dados de token e responder o código 200
