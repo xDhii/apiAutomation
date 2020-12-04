@@ -1,0 +1,15 @@
+# Create user
+user_creation:
+  firstName:  'firstName_'
+  lastName:   'lastName_'
+  password:   'webjump_automation-123'
+shipping_info:
+  company: WebJump
+  address_1: Av. Pres. Juscelino Kubitschek, 50
+  address_2: 7º andar
+  address_3: Vila Nova Conceição
+  city: São Paulo
+  country: Brazil
+  zip: 04543-000
+  state: São Paulo
+  phone: 2338-6889
