@@ -35,5 +35,17 @@ Então('a API deverá retornar os dados do produto e responder o código {int}')
   puts $produto
   puts "Status: #{$produto.code}"
   expect($produto.code).to eq int
-  puts x['data']['produtoid']
+end
+
+Quando('eu realizar uma requisição para buscar o produto {int}') do |int|
+  $busca = @lojinha.busca_produto(int)
+end
+
+Então('a API deverá retornar os dados do produto buscado e responder o código {int}') do |int|
+  expect($busca.code).to eq int
+  puts "ID      : #{$busca['data']['produtoid']}"
+  puts "Nome    : #{$busca['data']['produtonome']}"
+  puts "Valor   : #{$busca['data']['produtovalor']}"
+  puts "Cores   : #{$busca['data']['produtocores']}"
+  puts "Mensagem: #{$busca['message']}"
 end
