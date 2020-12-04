@@ -25,5 +25,20 @@ Então("a API deverá retornar os dados de token e responder o código {int}") d
   expect($login.message).to eq('OK')
   $token = $login['data']['token']
   puts "Token       : #{$token}"
+end
 
+Quando("eu realizar uma requisição para cadastrar um produto") do
+  $produto = @lojinha.cadastrar_produto
+end
+
+Então("a API deverá retornar os dados do produto e responder o código {int}") do |int|
+  puts $produto
+  x = $produto.to_json
+  puts $produto.code
+  expect($produto.code).to eq int
+
+  # binding.pry
+  puts x['data']['produtoid']
+  # puts $produto['data']
+  # puts $produto.message
 end
