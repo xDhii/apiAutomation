@@ -61,7 +61,7 @@ Available tags:
 @startup
 @lojinha
 
-Ps: @startup scenario may fail due to a cron job on the server that limits the API to store maximum 400 . To avoid it, run the @cleanStartup and wait few minutes until the endpoint is clean
+Ps: @startup scenario may fail due to limitation on the api/server that limits the API/DB to store maximum 400 records. To avoid it, run the @cleanStartup and wait few minutes until the endpoint is clean
 
 To generate the report with results and screenshots, I've used the report builder tool.
 All the results should be on the results\ folder after running the automation.
