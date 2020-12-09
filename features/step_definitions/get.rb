@@ -21,11 +21,10 @@ end
 Então("é retornado os dados do endereço pertencente ao CEP {string}") do |cep|
   @resCep = cep
   @endereco = @result.parsed_response
+  expect(@endereco['cep']).to include(cep)
   puts "Consultando o CEP " + @endereco['cep'].to_s
-  # puts @endereco
   puts @result.code
   puts @result.message
   puts @result.headers
   puts @result.body
-  expect(@endereco['cep']).to include(cep)
 end
