@@ -9,16 +9,16 @@ end
 Então('a API irá retornar os dados do cadastro da Startup respondendo o código {int}') do |int|
   # Validar status code e message
   expect($response.code).to eq int
-  puts "Responde code: #{$response.code}"
+  log("Responde code: #{$response.code}")
   expect($response.message).to eq("Created")
-  puts "Response Message: #{$response.message}"
+  log("Response Message: #{$response.message}")
 
   # Imprime os atributos retornados na requisição
-  puts "ID      : #{$response['id']}"
-  puts "Data    : #{$response['data']}"
-  puts "Nome    : #{$response['nome']}"
-  puts "Conta   : #{$response['conta']}"
-  puts "Cidade  : #{$response['cidade']}"
+  log("ID      : #{$response['id']}")
+  log("Data    : #{$response['data']}")
+  log("Nome    : #{$response['nome']}")
+  log("Conta   : #{$response['conta']}")
+  log("Cidade  : #{$response['cidade']}")
 
   $id = $response["id"]
 end
@@ -32,12 +32,12 @@ Então('a API irá retornar os dados da Startup correspondente respondendo o có
   expect($get.message).to eq('OK')
   expect($get["id"]).to eq($response['id'])
 
-  puts "ID      : #{$response['id']}"
-  puts "Data    : #{$response['data']}"
-  puts "Nome    : #{$response['nome']}"
-  puts "Conta   : #{$response['conta']}"
-  puts "Cidade  : #{$response['cidade']}"
-  puts "Status Code: #{$get.code}"
+  log("ID      : #{$response['id']}")
+  log("Data    : #{$response['data']}")
+  log("Nome    : #{$response['nome']}")
+  log("Conta   : #{$response['conta']}")
+  log("Cidade  : #{$response['cidade']}")
+  log("Status Code: #{$get.code}")
 
 end
 
@@ -50,12 +50,12 @@ Então('a API irá retornar os dados da Startup alterados respondendo o código 
   expect($put.message).to eq('OK')
   expect($put['id']).to eq($response['id'])
 
-  puts "ID      : #{$response['id']}"
-  puts "Data    : #{$response['data']}"
-  puts "Nome    : #{$response['nome']}"
-  puts "Conta   : #{$response['conta']}"
-  puts "Cidade  : #{$response['cidade']}"
-  puts "Status Code: #{$put.code}"
+  log("ID      : #{$response['id']}")
+  log("Data    : #{$response['data']}")
+  log("Nome    : #{$response['nome']}")
+  log("Conta   : #{$response['conta']}")
+  log("Cidade  : #{$response['cidade']}")
+  log("Status Code: #{$put.code}")
 end
 
 Quando('realizar uma requisição para excluir uma startup') do
@@ -66,12 +66,12 @@ Então('a API deverá retornar os dados da exclusão respondendo o código {int}
   expect($delete.code).to eq int
   expect($delete.message).to eq('OK')
 
-  puts "ID      : #{$response['id']}"
-  puts "Data    : #{$response['data']}"
-  puts "Nome    : #{$response['nome']}"
-  puts "Conta   : #{$response['conta']}"
-  puts "Cidade  : #{$response['cidade']}"
-  puts "Status Code: #{$delete.code}"
+  log("ID      : #{$response['id']}")
+  log("Data    : #{$response['data']}")
+  log("Nome    : #{$response['nome']}")
+  log("Conta   : #{$response['conta']}")
+  log("Cidade  : #{$response['cidade']}")
+  log("Status Code: #{$delete.code}")
 end
 
 Quando('realizar uma requisição para excluir todas as startups') do

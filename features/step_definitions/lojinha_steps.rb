@@ -10,10 +10,10 @@ Então('a API deverá retornar os dados do cadastro respondendo o código {int}'
   expect($response.code).to eq response_code
   expect($response.message).to eq("Created")
 
-  puts "User ID     : #{$response['data']['usuarioid']}"
-  puts "User Login  : #{$response['data']['usuariologin']}"
-  puts "User Name   : #{$response['data']['usuarionome']}"
-  puts "Message     : #{$response['message']}"
+  log("User ID     : #{$response['data']['usuarioid']}")
+  log("User Login  : #{$response['data']['usuariologin']}")
+  log("User Name   : #{$response['data']['usuarionome']}")
+  log("Message     : #{$response['message']}")
 end
 
 Quando('eu realizar uma requisição para logar com o usuário criado') do
@@ -24,7 +24,7 @@ Então('a API deverá retornar os dados de token e responder o código {int}') d
   expect($login.code).to eq int
   expect($login.message).to eq('OK')
   $token = $login['data']['token']
-  puts "Token       : #{$token}"
+  log("Token       : #{$token}")
 end
 
 Quando("eu realizar uma requisição para cadastrar um produto") do
@@ -32,8 +32,8 @@ Quando("eu realizar uma requisição para cadastrar um produto") do
 end
 
 Então('a API deverá retornar os dados do produto e responder o código {int}') do |int|
-  puts $produto
-  puts "Status: #{$produto.code}"
+  log($produto)
+  log("Status: #{$produto.code}")
   expect($produto.code).to eq int
 end
 
@@ -43,9 +43,9 @@ end
 
 Então('a API deverá retornar os dados do produto buscado e responder o código {int}') do |int|
   expect($busca.code).to eq int
-  puts "ID      : #{$busca['data']['produtoid']}"
-  puts "Nome    : #{$busca['data']['produtonome']}"
-  puts "Valor   : #{$busca['data']['produtovalor']}"
-  puts "Cores   : #{$busca['data']['produtocores']}"
-  puts "Mensagem: #{$busca['message']}"
+  log("ID      : #{$busca['data']['produtoid']}")
+  log("Nome    : #{$busca['data']['produtonome']}")
+  log("Valor   : #{$busca['data']['produtovalor']}")
+  log("Cores   : #{$busca['data']['produtocores']}")
+  log("Mensagem: #{$busca['message']}")
 end
