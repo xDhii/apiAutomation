@@ -3,10 +3,10 @@ Dado("que eu faça um GET no endpoint clientes") do
 end
 
 Então("o retorno dele será todos os clientes cadastrados") do
-  puts @get_clients.body
-  puts "Quantidade de posts: " + @get_clients.size.to_s
-  puts "Mensagem: " + @get_clients.message.to_s
-  puts "Código: " + @get_clients.code.to_s
+  log(@get_clients.body)
+  log("Quantidade de posts: " + @get_clients.size.to_s)
+  log("Mensagem: " + @get_clients.message.to_s)
+  log("Código: " + @get_clients.code.to_s)
   expect(@get_clients.code).to eq 200
 end
 
@@ -22,9 +22,9 @@ Então("é retornado os dados do endereço pertencente ao CEP {string}") do |cep
   @resCep = cep
   @endereco = @result.parsed_response
   expect(@endereco['cep']).to include(cep)
-  puts "Consultando o CEP " + @endereco['cep'].to_s
-  puts @result.code
-  puts @result.message
-  puts @result.headers
-  puts @result.body
+  log("Consultando o CEP " + @endereco['cep'].to_s)
+  log(@result.code)
+  log(@result.message)
+  log(@result.headers)
+  log(@result.body)
 end

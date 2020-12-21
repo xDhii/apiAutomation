@@ -12,7 +12,7 @@ Dado('que eu faça um POST no endpoint clientes') do
 end
 
 Então('um novo cliente será cadastrado') do
-  puts @post_clients.body
-  puts @post_clients.message
+  log(@post_clients.body)
+  log(@post_clients.message)
   expect(@post_clients.code).to eq 201
 end
